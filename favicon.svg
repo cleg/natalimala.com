@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Natali Mala</title>
+  <rect width="64" height="64" rx="14" fill="#f3e7df" />
+  <!-- Prata Regular outlines, with the wordmark's -0.05em letter spacing. -->
+  <g fill="#5a1720" transform="translate(8 42.81081) scale(0.02702703 -0.02702703)">
+    <path transform="translate(0 0)" d="M43 0V21L136 61V739L43 778V800H229L660 196V739L567 778V800H780V778L685 739V0H660L161 701V61L257 21V0Z" />
+    <path transform="translate(764.0 0)" d="M456 -10 158 764V61L254 21V0H40V21L134 61V764L42 778V800H263L514 158L770 800H972V778L880 764V36L972 21V0H678V21L770 36V734L474 -10Z" />
+  </g>
+</svg>
