@@ -91,3 +91,21 @@
 
   document.getElementById('year').textContent = new Date().getFullYear();
 })();
+
+
+// Track intent only: never send contact URLs, addresses, or message contents.
+(() => {
+  document.addEventListener('click', (event) => {
+    const link = event.target.closest('a[data-analytics-event]');
+    if (!link || typeof window.gtag !== 'function') return;
+
+    const parameters = { transport_type: 'beacon' };
+    if (link.dataset.analyticsSource) {
+      parameters.cta_location = link.dataset.analyticsSource;
+    }
+    if (link.dataset.analyticsMethod) {
+      parameters.contact_method = link.dataset.analyticsMethod;
+    }
+    window.gtag('event', link.dataset.analyticsEvent, parameters);
+  });
+})();
