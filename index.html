@@ -60,7 +60,10 @@
           <a class="button" href="#contact" data-analytics-event="contact_cta_click" data-analytics-source="hero">Домовитися про зустріч <span aria-hidden="true">→</span></a>
         </div>
         <div class="hero-portrait">
-          <img class="hero-photo" src="photo.jpg" alt="Наталя Мала — гештальт-терапевтка" width="959" height="1280" fetchpriority="high" />
+          <picture class="hero-picture">
+            <source media="(max-width: 720px)" srcset="photo-mobile.jpg" width="441" height="589" />
+            <img class="hero-photo" src="photo.jpg" alt="Наталя Мала — гештальт-терапевтка" width="959" height="1280" fetchpriority="high" />
+          </picture>
           <p class="hero-note">Мені цікава ваша історія!</p>
         </div>
         <a class="scroll-cue" href="#about" aria-label="Перейти до розділу Про мене"><span></span>Далі</a>

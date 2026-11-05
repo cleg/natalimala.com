@@ -38,7 +38,7 @@ def build():
     with tempfile.TemporaryDirectory(prefix='.build-', dir=ROOT) as temporary:
         output = Path(temporary)
         for name in ('index.html', 'styles.css', 'script.js', 'photo.jpg',
-                     'favicon.svg', 'og-image.png'):
+                     'photo-mobile.jpg', 'favicon.svg', 'og-image.png'):
             shutil.copyfile(ROOT / name, output / name)
 
         css_key = hashlib.sha256(FONT_URL.encode()).hexdigest()[:16]

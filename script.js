@@ -1,5 +1,9 @@
 (() => {
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const desktop = window.matchMedia('(min-width: 1001px)');
   const svg = document.getElementById('rings');
+  function renderRings() {
+    if (!desktop.matches || svg.childElementCount) return;
   const ns = 'http://www.w3.org/2000/svg';
 
   // A seeded generator keeps the hand-tuned, organic composition identical on every visit.
@@ -89,7 +93,9 @@
     svg.appendChild(group);
   });
 
-  document.getElementById('year').textContent = new Date().getFullYear();
+  }
+  renderRings();
+  desktop.addEventListener('change', renderRings);
 })();
 
 

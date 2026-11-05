@@ -154,3 +154,11 @@ footer .privacy-note { border-top: 1px solid rgba(90, 23, 32, .2); flex-basis: 1
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
 }
+
+
+.hero-picture { display: contents; }
+/* Keep decorative animation on desktop only. */
+@media (max-width: 1000px) {
+  .ring-stage { display: none; }
+  .ring { animation: none; will-change: auto; }
+}

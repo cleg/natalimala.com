@@ -15,7 +15,8 @@ Publish the **contents of `dist/`** to https://natalimala.com/.
 
 The build:
 
-- copies HTML, CSS, JavaScript, the portrait, SVG favicon and Open Graph image;
+- copies HTML, CSS, JavaScript, both portrait sizes, SVG favicon and Open Graph image;
+- serves `photo-mobile.jpg` (441×589) up to 720px viewport width and the original portrait above it;
 - downloads DM Sans (400, 500, 600, 700) and Prata with the language subsets provided by Google Fonts;
 - rewrites font URLs to local files and removes Google Fonts links from the output HTML;
 - generates 32×32 and 180×180 PNG icons from `favicon.svg` using macOS tools;
@@ -52,3 +53,9 @@ When DNS becomes available, set the Pages custom domain to `natalimala.com`
 before pointing DNS at GitHub Pages, then enable Enforce HTTPS when available.
 For an Actions deployment, a `CNAME` file is not required. Domain email is
 configured separately with a mail provider, not GitHub Pages.
+
+To regenerate the mobile portrait after replacing `photo.jpg`:
+
+```sh
+sips -Z 589 -s formatOptions 78 photo.jpg --out photo-mobile.jpg
+```
