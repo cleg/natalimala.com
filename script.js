@@ -115,3 +115,19 @@
     window.gtag('event', link.dataset.analyticsEvent, parameters);
   });
 })();
+
+// Count the first viewport entry only, without requiring the whole section to fit.
+(() => {
+  const pricing = document.getElementById('price');
+  if (!pricing || !('IntersectionObserver' in window)) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    const visible = entries.some((entry) => entry.isIntersecting && entry.intersectionRect.width > 0 && entry.intersectionRect.height > 0);
+    if (!visible || typeof window.gtag !== 'function') return;
+
+    window.gtag('event', 'pricing_section_view', { transport_type: 'beacon' });
+    observer.disconnect();
+  }, { threshold: 0 });
+
+  observer.observe(pricing);
+})();
