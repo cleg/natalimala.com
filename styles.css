@@ -127,7 +127,7 @@ h2 { font-size: clamp(2.85rem, 5.4vw, 5.5rem); }
 .contact-card { align-items: center; background: var(--ivory); border: 1px solid var(--ivory); border-radius: 6px; color: var(--wine); display: flex; gap: 1rem; min-height: 88px; padding: 1.1rem 1.25rem; }
 a.contact-card { transition: background .2s, transform .2s; }
 a.contact-card:hover { background: #fff7f1; transform: translateY(-2px); }
-a.contact-card:focus-visible { outline-color: var(--ivory); }
+.contact a:focus-visible { outline-color: var(--ivory); }
 .contact-icon { flex-shrink: 0; height: 28px; width: 28px; }
 .contact-card-text { display: grid; gap: .2rem; min-width: 0; }
 .contact-card-label { font-size: .8rem; }
@@ -183,3 +183,7 @@ footer .privacy-note { border-top: 1px solid rgba(90, 23, 32, .2); flex-basis: 1
   .ring-stage { display: none; }
   .ring { animation: none; will-change: auto; }
 }
+
+/* Keyboard-only bypass; does not change the resting layout. */
+.skip-link { background: var(--ivory); color: var(--wine); left: 1rem; padding: .75rem 1rem; position: fixed; top: 1rem; transform: translateY(-200%); z-index: 10; }
+.skip-link:focus { transform: translateY(0); }
